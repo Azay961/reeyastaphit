@@ -3,9 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reeya Staphit Portfolio</title>
+    <link rel="icon" type="image/png" href="profile.avif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 40px;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #hero {
+            display: flex;
+            text-align: center;
+            padding: 50px 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        #portfolio {
+            padding: 20px;
+        }
+        .projects {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 200px;
+            text-align: center;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Button base */
+        .round-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* Specific colors */
+        .resume { background-color: #eea302; color: black;}
+        .projects { background-color: #ff3b25; color: black;}
+        .contact { background-color: #80d8da; color: black;}
+
+        /* Hover effect */
+        .resume:hover { background-color: #fff; color: #eea302; border: 2px solid #eea302; }
+        .projects:hover { background-color: #fff; color: #ff3b25; border: 2px solid #ff3b25; }
+        .contact:hover { background-color: #fff; color: #80d8da; border: 2px solid #80d8da; }
+
+    </style>
 </head>
 <body>
-    <p>THis is product page</p>
+    <!-- Header -->
+    <header >
+        <div class="left-section" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <h1>Reeya Staphit </h1>
+            <p>Graphic Designer</p>
+        </div>
+        <p style="align-items: end;">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+                Home
+            </a> |
+            <a href="projects.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+                Resume
+            </a> |
+            <a href="projects.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+                Projects
+            </a>
+        </p>
+    </header>
+    <hr>
+    <section id="hero" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; padding: 50px 20px; text-align: center; overflow: hidden;">
+        <p>This is project section</p>
+    </section>
+    <!-- Footer Section -->
+     <footer>
+        <hr>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: block;">
+                <p><strong>Phone</strong></p>
+                <p>+977 9742847389</p>
+            </div>
+            <div style="display: block;">
+                <p><strong>Email</strong></p>
+                <a href="mailto:erajaynp@gmail.com" style="text-decoration: none; color: black;">erajaynp@gmail.com</a>
+            </div>
+            <div style="display: block;">
+                <p><strong>Follow Me</strong></p>
+                <a href="https://www.linkedin.com/in/chaudharyajay/" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none; color: black; font-size: 24px;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none; color: black; font-size: 24px;">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style="color: black; font-size: 24px;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        
+        <p style="text-align: center;">&copy; 2024 Reeya Staphit. All rights reserved.</p>
+     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
