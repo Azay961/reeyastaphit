@@ -22,13 +22,6 @@
       transition: all 0.3s ease;
       text-decoration: none;
     }
-    .resume { background-color: #eea302; color: black; }
-    .projects { background-color: #ff3b25; color: black; }
-    .contact { background-color: #80d8da; color: black; }
-
-    .resume:hover { background: #fff; color: #eea302; border: 2px solid #eea302; }
-    .projects:hover { background: #fff; color: #ff3b25; border: 2px solid #ff3b25; }
-    .contact:hover { background: #fff; color: #80d8da; border: 2px solid #80d8da; }
     @media (max-width: 767px) {
       .about-text {
         padding: 20px;
@@ -39,8 +32,8 @@
        footer { 
         padding: 40px;
       }
-      #hero {
-        margin: 60px 0;
+      #resume {
+        padding: 0 40px;
       }
     }
     @media (max-width: 991px) { 
@@ -83,30 +76,91 @@
         </div>
         </div>
     </nav>
-
-  <!-- Hero Section -->
-  <section id="hero" class="container py-5 text-center text-md-start">
-    <div class="row align-items-center g-4">
-      <!-- Image -->
-      <div class="col-md-5 text-center">
-        <img src="reeya.avif" alt="Reeya Staphit Profile" class="img-fluid rounded-circle" style="max-width: 300px;">
+    <!-- Resume Section -->
+<section id="resume" class="container py-5">
+  <div class="row mb-5 justify-content-center">
+    <div class="col-lg-5">
+      <h2 class="mb-4"><strong>Resume</strong></h2>
+    </div>
+    <div class="col-lg-5">
+    </div>
+  </div>
+  <!-- Work Experience -->
+  <div class="row mb-5 justify-content-center">
+    <div class="col-lg-5">
+      <h3 class="mb-4">Work Experience</h3>
+    </div>
+    <div class="col-lg-5 text-start">
+      <div class="mb-4">
+        <h5>Data Specialist <small class="text-muted d-block">2019 - Present</small></h5>
+        <ul>
+          <li>Annotated diverse data types, including text, images, and multimedia content.</li>
+          <li>Completed high-priority projects ahead of schedule.</li>
+          <li>Ensured compliance with guidelines and maintained data quality.</li>
+        </ul>
       </div>
-
-      <!-- Content -->
-      <div class="col-md-7">
-        <h2>Hello</h2>
-        <h4>A bit about me</h4>
-        <p class="col-sm-8 about-text">
-          Results-oriented IT professional with over 8 years of experience in data annotation and labeling techniques, ensuring high-quality labeled data for training machine learning models. I am a hardworking individual with strong ambition, responsible and well-organized. I am also a Graphic Designing enthusiast, proficient in Adobe Creative Suite (Photoshop, Illustrator, InDesign).
-        </p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="resume.html" class="round-btn resume">Resume</a>
-          <a href="portfolio.html" class="round-btn projects">Projects</a>
-          <a href="contacts.html" class="round-btn contact">Contact</a>
-        </div>
+      <div class="mb-4">
+        <h5>Graphic Design <small class="text-muted d-block">2023 - Present</small></h5>
+        <ul>
+          <li>Focused on creativity, color theory, typography, and software proficiency.</li>
+          <li>Designed for weddings, birthdays, and organizational events.</li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <h5>Chhatrapati Free Clinic <small class="text-muted d-block">2025 - Present</small></h5>
+        <ul>
+          <li><strong>IT Department:</strong> Website management and updates.</li>
+          <li><strong>Administration:</strong> Monitoring departments, marketing training.</li>
+        </ul>
+      </div>
+      <div>
+        <h5>UI/UX Design <small class="text-muted d-block">2025 - Present</small></h5>
+        <ul>
+          <li>UI/UX with focus on detail, aesthetics, and communication.</li>
+          <li>Designed for weddings, birthdays, and organizational events.</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Education -->
+  <div class="row mb-5 justify-content-center">
+    <div class="col-lg-5">
+      <h3 class="mb-4">Education</h3>
+    </div>
+    <div class="col-lg-5 text-start">
+      <div class="mb-4">
+        <h5>Kist College of IT <small class="text-muted d-block">2016 - 2020</small></h5>
+        <p>Bachelor's Degree in IT</p>
+      </div>
+      <div>
+        <h5>Establishment Name <small class="text-muted d-block">2035</small></h5>
+        <p>Bachelor's Degree</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+      <h3 class="mb-4">Skills &amp; Expertise</h3>
+    </div>
+    <div class="col-lg-5 text-start">
+        <ul>
+            <li>Project Management</li>
+            <li>Annotation</li>
+            <li>Teamwork</li>
+            <li>Time Management</li>
+            <li>Software Proficiency</li>
+            <li>Color Theory</li>
+            <li>Typography</li>
+            <li>Critical Thinking</li>
+            <li>Collaboration</li>
+            <li>Attention to Detail</li>
+        </ul>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-white border-top py-4 mb-0">

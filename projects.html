@@ -1,128 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reeya Staphit Portfolio</title>
-    <link rel="icon" type="image/png" href="profile.avif">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0 40px;
-            background-color: #f4f4f4;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        #hero {
-            display: flex;
-            text-align: center;
-            padding: 50px 20px;
-            align-items: center;
-            justify-content: center;
-        }
-        #portfolio {
-            padding: 20px;
-        }
-        .projects {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .project {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 200px;
-            text-align: center;
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reeya Staphit Portfolio</title>
+  <link rel="icon" type="image/png" href="reeya.avif">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .round-btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    @media (max-width: 767px) {
+      .about-text {
+        padding: 20px;
+      }
+    }
+    @media (min-width: 768px) {
+       .header,
+       footer { 
+        padding: 40px;
+      }
+      #project {
+        padding: 0 40px;
+      }
+    }
+    @media (max-width: 991px) { 
+    .navbar-nav .nav-link {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        line-height: 1;
+    }
+    .navbar-nav {
+        gap: 0 !important;
+    }
+    }
+    @media (min-width: 768px) {
+    .project-img {
+      width: 550px;
+      height: 300px;
+    }
+  }
 
-        /* Button base */
-        .round-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        /* Specific colors */
-        .resume { background-color: #eea302; color: black;}
-        .projects { background-color: #ff3b25; color: black;}
-        .contact { background-color: #80d8da; color: black;}
-
-        /* Hover effect */
-        .resume:hover { background-color: #fff; color: #eea302; border: 2px solid #eea302; }
-        .projects:hover { background-color: #fff; color: #ff3b25; border: 2px solid #ff3b25; }
-        .contact:hover { background-color: #fff; color: #80d8da; border: 2px solid #80d8da; }
-
-    </style>
+  </style>
 </head>
-<body>
-    <!-- Header -->
-    <header >
-        <div class="left-section" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-            <h1>Reeya Staphit </h1>
-            <p>Graphic Designer</p>
+<body class="bg-light">
+
+  <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom header">
+        <div class="container-fluid">
+        <div class="d-flex align-items-center gap-3">
+            <h1 class="h4 mb-0">Reeya Staphit</h1>
+            <div class="d-flex flex-column lh-sm">
+            <span>Graphic Designer</span>
+            <span>UIUX Designer</span>
+            </div>
         </div>
-        <p style="align-items: end;">
-            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
-                Home
-            </a> |
-            <a href="projects.html" style="text-decoration: none; color: rgb(0, 0, 0);">
-                Resume
-            </a> |
-            <a href="projects.html" style="text-decoration: none; color: rgb(0, 0, 0);">
-                Projects
-            </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="projects.html">Resume</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="contacts.html">Contacts</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- Project Section -->
+<section id="project" class="container py-5">
+  <div class="row mb-5 justify-content-center">
+    <div class="col-lg-5">
+      <h2 class="mb-4"><strong>Projects</strong></h2>
+    </div>
+    <div class="col-lg-5">
+    </div>
+  </div>
+  <!-- Project 1 -->
+    <div class="row mb-5 justify-content-center align-items-start">
+      <div class="col-lg-5 mb-3 mb-lg-0">
+        <h3 class="mb-4">Project 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sapiente eos fugit inventore,
+          possimus aliquam error earum soluta quos quo cumque dignissimos, quae distinctio commodi
+          consequuntur. Magni est corporis aperiam!
         </p>
-    </header>
-    <hr>
-    <section id="hero" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; padding: 50px 20px; text-align: center; overflow: hidden;">
-        <p>This is project section</p>
-    </section>
-    <!-- Footer Section -->
-     <footer>
-        <hr>
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: block;">
-                <p><strong>Phone</strong></p>
-                <p>+977 9742847389</p>
-            </div>
-            <div style="display: block;">
-                <p><strong>Email</strong></p>
-                <a href="mailto:erajaynp@gmail.com" style="text-decoration: none; color: black;">erajaynp@gmail.com</a>
-            </div>
-            <div style="display: block;">
-                <p><strong>Follow Me</strong></p>
-                <a href="https://www.linkedin.com/in/chaudharyajay/" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none; color: black; font-size: 24px;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none; color: black; font-size: 24px;">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" style="color: black; font-size: 24px;">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
+      </div>
+      <div class="col-lg-5">
+        <img src="profile.avif" alt="project 1" class="project-img img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project 1 -->
+    <div class="row mb-5 justify-content-center align-items-start">
+      <div class="col-lg-5 mb-3 mb-lg-0">
+        <h3 class="mb-4">Project 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sapiente eos fugit inventore,
+          possimus aliquam error earum soluta quos quo cumque dignissimos, quae distinctio commodi
+          consequuntur. Magni est corporis aperiam!
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <img src="profile.avif" alt="project 1" class="project-img img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project 1 -->
+    <div class="row mb-5 justify-content-center align-items-start">
+      <div class="col-lg-5 mb-3 mb-lg-0">
+        <h3 class="mb-4">Project 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sapiente eos fugit inventore,
+          possimus aliquam error earum soluta quos quo cumque dignissimos, quae distinctio commodi
+          consequuntur. Magni est corporis aperiam!
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <img src="profile.avif" alt="project 1" class="project-img img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top py-4 mb-0">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center gy-4">
+        <div class="col-md-3">
+          <p class="fw-bold mb-1">Phone</p>
+          <p class="mb-0">+977 9840170176</p>
         </div>
-        
-        <p style="text-align: center;">&copy; 2024 Reeya Staphit. All rights reserved.</p>
-     </footer>
-    <script src="js/script.js"></script>
+        <div class="col-md-3">
+          <p class="fw-bold mb-1">Email</p>
+          <a href="mailto:reeya.sthapi@gmail.com" class="text-dark text-decoration-none">reeya.sthapi@gmail.com</a>
+        </div>
+        <div class="col-md-3">
+          <p class="fw-bold mb-1">Follow Me</p>
+          <a href="https://www.linkedin.com/in/reeya-sthapit-b3255a132/" target="_blank" class="text-dark fs-4 me-2">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <!-- Uncomment if needed
+          <a href="#" class="text-dark fs-4 me-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+          -->
+        </div>
+        <div class="col-md-3 text-md-end">
+          <p class="mb-0">&copy; 2024 Reeya Staphit.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -22,13 +22,6 @@
       transition: all 0.3s ease;
       text-decoration: none;
     }
-    .resume { background-color: #eea302; color: black; }
-    .projects { background-color: #ff3b25; color: black; }
-    .contact { background-color: #80d8da; color: black; }
-
-    .resume:hover { background: #fff; color: #eea302; border: 2px solid #eea302; }
-    .projects:hover { background: #fff; color: #ff3b25; border: 2px solid #ff3b25; }
-    .contact:hover { background: #fff; color: #80d8da; border: 2px solid #80d8da; }
     @media (max-width: 767px) {
       .about-text {
         padding: 20px;
@@ -39,8 +32,8 @@
        footer { 
         padding: 40px;
       }
-      #hero {
-        margin: 60px 0;
+      #contact {
+        padding: 0 40px;
       }
     }
     @media (max-width: 991px) { 
@@ -53,6 +46,12 @@
         gap: 0 !important;
     }
     }
+    @media (min-width: 768px) {
+    .project-img {
+      width: 550px;
+      height: 300px;
+    }
+  }
 
   </style>
 </head>
@@ -83,30 +82,54 @@
         </div>
         </div>
     </nav>
-
-  <!-- Hero Section -->
-  <section id="hero" class="container py-5 text-center text-md-start">
-    <div class="row align-items-center g-4">
-      <!-- Image -->
-      <div class="col-md-5 text-center">
-        <img src="reeya.avif" alt="Reeya Staphit Profile" class="img-fluid rounded-circle" style="max-width: 300px;">
+    <!-- contact Section -->
+<section id="contact" class="container py-5">
+  <div class="row mb-5 justify-content-center">
+    <div class="col-lg-5">
+      <h2 class="mb-4"><strong>Projects</strong></h2>
+    </div>
+    <div class="col-lg-5">
+    </div>
+  </div>
+  <!-- Project 1 -->
+    <div class="row mb-5 justify-content-center align-items-start">
+      <div class="col-lg-5 mb-3 mb-lg-0">
+        <h2 class="text-start mb-3">Contact</h2>
+        <p class="text-start mb-5">Looking forward to hearing from you</p>
+        <h5 class="text-start">Phone</h5>
+        <p class="text-start mb-5"><a href="tel:+9779840170176" style="text-decoration:none; color:inherit;">+977 9840170176</a></p>
+        <h5 class="text-start">Email</h5>
+        <p class="text-start mb-5"><a href="mailto:reeya.sthapi@gmail.com" style="text-decoration:none; color:inherit;">reeya.sthapi@gmail.com</a></p>
+    
       </div>
-
-      <!-- Content -->
-      <div class="col-md-7">
-        <h2>Hello</h2>
-        <h4>A bit about me</h4>
-        <p class="col-sm-8 about-text">
-          Results-oriented IT professional with over 8 years of experience in data annotation and labeling techniques, ensuring high-quality labeled data for training machine learning models. I am a hardworking individual with strong ambition, responsible and well-organized. I am also a Graphic Designing enthusiast, proficient in Adobe Creative Suite (Photoshop, Illustrator, InDesign).
-        </p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="resume.html" class="round-btn resume">Resume</a>
-          <a href="portfolio.html" class="round-btn projects">Projects</a>
-          <a href="contacts.html" class="round-btn contact">Contact</a>
-        </div>
+      <div class="col-lg-5">
+        <form id="my-form" action="https://formspree.io/f/xqayzwyl" method="POST">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" name="first_name" class="form-control" placeholder="First Name*" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" name="last_name" class="form-control" placeholder="Last Name*" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Email*" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" name="Subject" class="form-control" placeholder="Subject">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-dark px-5 mt-3" id="my-form-button">Send Message</button>
+            </div>
+            <p id="my-form-status"></p>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-white border-top py-4 mb-0">
@@ -137,6 +160,38 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+  var form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
 </body>
 </html>
